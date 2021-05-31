@@ -1,0 +1,6 @@
+---
+# tasks file for roles/ftp_client
+- name: CentOS - Install FTP Client
+  ansible.builtin.dnf:
+    name: lftp
+    state: latest

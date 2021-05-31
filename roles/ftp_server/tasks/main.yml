@@ -1,0 +1,18 @@
+---
+# tasks file for roles/ftp_server
+- name: Install FTP package FTP Server
+  ansible.builtin.yum:
+    name: vsftpd
+    state: latest
+
+- name: Start FTP Service
+  ansible.builtin.service:
+    name: vsftpd
+    state: started
+    enabled: yes
+
+- name: Restart ftp server
+  ansible.builtin.service:
+    name: vsftpd
+    state: restarted
+    enabled: yes
